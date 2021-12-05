@@ -34,7 +34,6 @@ namespace krang
             OperandoLabel.Text = operando_actual;
             if (valor_actual == "0" && operando_actual == "0") return;
             operando_actual += valor_actual;
-            Console.WriteLine(operando_actual);
             OperandoLabel.Text = operando_actual;
         }
 
@@ -123,7 +122,6 @@ namespace krang
                     resultado = a + b;
                     break;
                 case "-":
-                    Console.WriteLine(a.ToString(), b.ToString(), (a - b).ToString());
                     resultado = a - b;
                     break;
                 case "*":
