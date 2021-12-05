@@ -6,7 +6,6 @@
         <Frame BackgroundColor="Red" Padding="24" CornerRadius="0">
             <Label Text="Calculadora Básica" HorizontalTextAlignment="Center" TextColor="White" FontSize="40"/>
         </Frame>
-        
        <Grid Margin="20">
             <Label Text="0" x:Name="OperandoLabel" TextColor="LightSlateGray"
                    VerticalOptions="End"

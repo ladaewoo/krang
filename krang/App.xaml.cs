@@ -8,7 +8,7 @@ namespace krang
     {
         public App()
         {
-            InitializeComponent();
+           InitializeComponent();
 
             MainPage = new MainPage();
         }
