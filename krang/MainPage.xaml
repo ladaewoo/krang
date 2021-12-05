@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="krang.MainPage">
+    <StackLayout>
+        <Frame BackgroundColor="Red" Padding="24" CornerRadius="0">
+            <Label Text="Calculadora Básica" HorizontalTextAlignment="Center" TextColor="White" FontSize="40"/>
+        </Frame>
+        
+       <Grid Margin="20">
+            <Label Text="0" x:Name="OperandoLabel" TextColor="LightSlateGray"
+                   VerticalOptions="End"
+                   HorizontalOptions="End"
+                   Grid.ColumnSpan="4"
+                   FontSize="100" />
+            <Button Grid.Row="1"
+                    CornerRadius="10"
+                    Style="{StaticResource ac_button}"
+                    Clicked="Reset"
+                    Text="AC" />
+            <Button Grid.Row="1"
+                    CornerRadius="10"
+                    Grid.Column="1"
+                    Style="{StaticResource operator_button}"
+                    Clicked="Retroceder"
+                    Text="⌫" />
+            <Button Grid.Row="1"
+                    CornerRadius="10"
+                    Grid.Column="2"
+                    Style="{StaticResource operator_button}"
+                    Clicked="InvertirPrefijo"
+                    Text="±" />
+            <Button Grid.Row="1"
+                    CornerRadius="10"
+                    Grid.Column="3"
+                    Clicked="Operar"
+                    Style="{StaticResource operator_button}"
+                    Text="÷" />
+            <Button Grid.Row="2"
+                    CornerRadius="10"
+                    Clicked="Concatenar"
+                    Text="7" />
+            <Button Grid.Row="2"
+                    CornerRadius="10"
+                    Grid.Column="1"
+                    Clicked="Concatenar"
+                    Text="8" />
+            <Button Grid.Row="2"
+                    CornerRadius="10"
+                    Grid.Column="2"
+                    Clicked="Concatenar"
+                    Text="9" />
+            <Button Grid.Row="2"
+                    CornerRadius="10"
+                    Grid.Column="3"
+                    Clicked="Operar"
+                    Style="{StaticResource operator_button}"
+                    Text="*" />
+            <Button Grid.Row="3"
+                    CornerRadius="10"
+                    Clicked="Concatenar"
+                    Text="4" />
+            <Button Grid.Row="3"
+                    CornerRadius="10"
+                    Grid.Column="1"
+                    Clicked="Concatenar"
+                    Text="5" />
+            <Button Grid.Row="3"
+                    CornerRadius="10"
+                    Grid.Column="2"
+                    Clicked="Concatenar"
+                    Text="6" />
+           <Button Grid.Row="3"
+                    CornerRadius="10"
+                    Grid.Column="3"
+                   Clicked="Operar"
+                    Style="{StaticResource operator_button}"
+                    Text="-" />
+            <Button Grid.Row="4"
+                    CornerRadius="10"
+                    Clicked="Concatenar"
+                    Text="1" />
+            <Button Grid.Row="4"
+                    CornerRadius="10"
+                    Grid.Column="1"
+                    Clicked="Concatenar"
+                    Text="2" />
+            <Button Grid.Row="4"
+                    Grid.Column="2"
+                    CornerRadius="10"
+                    Clicked="Concatenar"
+                    Text="3" />
+            <Button Grid.Row="4"
+                    Grid.Column="3"
+                    CornerRadius="10"
+                    Clicked="Operar"
+                    Style="{StaticResource operator_button}"
+                    Text="+" />
+            <Button Grid.Row="5"
+                    CornerRadius="10"
+                    Clicked="Concatenar"
+                    Text="0" />
+            <Button Grid.Row="5"
+                    Grid.Column="1"
+                    CornerRadius="10"
+                    Clicked="AgregarPunto"
+                    Text="⬝" />
+            
+            <Button Grid.Row="5"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    CornerRadius="10"
+                    Clicked="ObtenerResultado"
+                    Style="{StaticResource operator_button}"
+                    Text="=" />
+       </Grid> 
+    </StackLayout>
+</ContentPage>
