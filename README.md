@@ -1,4 +1,4 @@
-# Calculadora básica en C#
+# <img width="20px" height="20px" src="krang.Android/Resources/mipmap-hdpi/icon.png"> Calculadora básica en C#
 
 [<img alt="Get it on Google Play" style="float:right" height="50px" src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png" />](https://play.google.com/store/apps/details?id=com.eaglesolutions.krang&utm_source=github)
 
@@ -18,7 +18,7 @@ Disponible para ser desacargada desde Play Store, si tienes correcciones o mejor
   </p>
 </div>
 
-### Si lanzas tu propia versión no olvides renombrar el paquete en el `AndroidManifest.XML`
+#### Si lanzas tu propia versión no olvides renombrar el paquete en el `AndroidManifest.XML`
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
