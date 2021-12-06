@@ -20,7 +20,7 @@ namespace krang
             SizeChanged += (object sender, EventArgs args) =>
             {
                 if (this.Height > 0)
-                    OperandoLabel.FontSize = this.Height / 7;
+                    OperandoLabel.FontSize = this.Height / 9;
             };
 
             InitializeComponent();

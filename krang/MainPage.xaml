@@ -6,12 +6,12 @@
         <Frame BackgroundColor="Red" Padding="24" CornerRadius="0">
             <Label Text="Calculadora Básica" HorizontalTextAlignment="Center" TextColor="White" FontSize="40"/>
         </Frame>
-       <Grid Margin="20">
+       <Grid Margin="20" Background="White" Padding="10">
             <Label Text="0" x:Name="OperandoLabel" TextColor="LightSlateGray"
                    VerticalOptions="End"
                    HorizontalOptions="End"
                    Grid.ColumnSpan="4"
-                   FontSize="100" />
+                   FontSize="Header" />
             <Button Grid.Row="1"
                     CornerRadius="10"
                     Style="{StaticResource ac_button}"
