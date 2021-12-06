@@ -8,13 +8,13 @@ Disponible para ser desacargada desde Play Store, si tienes correcciones o mejor
 
 <div>
   <p>
-  <img align="center" src="screenshots/1.png" alt="Ejecución en el emulador de iOS" height="350" width="720" />
+  <img align="center" src="screenshots/1.png" alt="Ejecución en el emulador de iOS" height="400" width="720" />
   </p>
   <p>
   Para cambiar la configuración de ejecución activa, abre el menú contextual sobre la carpeta del proyecto y haz clic en <b>establecer como proyecto de inicio</b>.
   </p> 
   <p>
-  <img align="center" src="screenshots/2.png" alt="Ejecución en el emulador de android" height="350" width="720" />
+  <img align="center" src="screenshots/2.png" alt="Ejecución en el emulador de android" height="400" width="720" />
   </p>
 </div>
 
