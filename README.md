@@ -1,10 +1,6 @@
 # <img width="20px" height="20px" src="krang.Android/Resources/mipmap-hdpi/icon.png"> Calculadora básica en C#
 
-[<img alt="Get it on Google Play" style="float:right" height="50px" src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png" />](https://play.google.com/store/apps/details?id=com.eaglesolutions.krang&utm_source=github)
-
 Código de ejemplo de una calculadora básica, espero le pueda servir a alguien como introducción al desarrollo de aplicaciones nativas para __iOS__ y __android__ con **Xamarin Forms**.
-
-Disponible para ser desacargada desde Play Store, si tienes correcciones o mejoras no dudes en enviarme PR o escribirme a j.morales@eaglesolutions.com.mx.
 
 <div>
   <p>
