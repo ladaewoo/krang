@@ -8,9 +8,12 @@ namespace krang
     {
         public App()
         {
-           InitializeComponent();
-
-            MainPage = new MainPage();
+           
+            Device.InvokeOnMainThreadAsync(() =>
+            {
+                InitializeComponent();
+                MainPage = new MainPage();
+            });
         }
 
         protected override void OnStart()

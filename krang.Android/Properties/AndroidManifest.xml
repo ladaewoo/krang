@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.2" package="com.eaglesolutions.krang" android:versionCode="3">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.6" package="com.eaglesolutions.krang" android:versionCode="7">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
-	<application android:label="krang.Android" android:theme="@style/MainTheme"></application>
+	<application android:theme="@style/MainTheme" android:label="Calculadora Basica"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>

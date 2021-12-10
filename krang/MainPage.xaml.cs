@@ -11,9 +11,9 @@ namespace krang
 {
     public partial class MainPage : ContentPage
     {
-        public string operando_actual = "";
-        public float operando_anterior = 0;
-        public string operador = null;
+        string operador = null;
+        string operando1 = null;
+        string ultimo_estado = null;
 
         public MainPage()
         {
@@ -29,98 +29,84 @@ namespace krang
         void Reset(System.Object sender, System.EventArgs e)
         {
             OperandoLabel.Text = "0";
-            operando_actual = "";
-            operando_anterior = 0;
         }
 
         void Concatenar(System.Object sender, System.EventArgs e)
         {
-            string valor_actual = ((Button)sender).Text;
-            if (operando_actual == "0" || valor_actual == "-") operando_actual = "";
-            OperandoLabel.Text = operando_actual;
-            if (valor_actual == "0" && operando_actual == "0") return;
-            operando_actual += valor_actual;
-            OperandoLabel.Text = operando_actual;
+            if (operador == null)
+            {
+                OperandoLabel.Text += ((Button)sender).Text;
+                OperandoLabel.Text = (Convert.ToDecimal(OperandoLabel.Text)).ToString();
+            }
+            else
+            {
+                operando1 = OperandoLabel.Text;
+                OperandoLabel.Text = ((Button)sender).Text;
+            }
+
+            ultimo_estado = "C";
         }
 
         void AgregarPunto(System.Object sender, System.EventArgs e)
         {
-            
+            Match m = Regex.Match(OperandoLabel.Text, @"[.]+");
 
-            if(operando_actual.Length > 0)
+            if (!m.Success)
             {
-                Match m = Regex.Match(operando_actual, @"[.]+");
-
-                if (!m.Success)
-                {
-                    operando_actual += ".";
-                }
-            } else
-            {
-                operando_actual = "0.";
+                OperandoLabel.Text += ".";
             }
-
-            OperandoLabel.Text = operando_actual;
         }
 
         void InvertirPrefijo(System.Object sender, System.EventArgs e)
         {
-            if(!Double.IsNaN(Convert.ToDouble(operando_actual)))
-            {
-                float valorInvertido = float.Parse(operando_actual) * -1;
-                operando_actual = valorInvertido.ToString();
-                OperandoLabel.Text = operando_actual;
-            }
-            
+            OperandoLabel.Text = (Convert.ToDecimal(OperandoLabel.Text) * -1).ToString();
         }
 
         void Retroceder(System.Object sender, System.EventArgs e)
         {
-            operando_actual = (operando_actual.Length <= 1) ? "0" : operando_actual.Substring(0, operando_actual.Length - 1);
-            OperandoLabel.Text = operando_actual;
+            string label = OperandoLabel.Text;
+            OperandoLabel.Text = label.Length <= 1 ? "0" : label.Substring(0, label.Length - 1); 
+        }
+
+        void Operacion()
+        {
+            decimal operando2 = Convert.ToDecimal(OperandoLabel.Text);
+            decimal resultado = Calcular(Convert.ToDecimal(operando1), operador, operando2);
+            OperandoLabel.Text = resultado.ToString();
+            operando1 = null;
+            operador = null;
         }
 
         void ObtenerResultado(System.Object sender, System.EventArgs e)
         {
-            if(operador != null)
-            {
-                float resultado = Calcular(operando_anterior, operando_actual.Length > 0 ? float.Parse(operando_actual) : 0, operador);
-
-                if(Double.IsInfinity((double)resultado))
-                {
-                    resultado = 0;
-                }
-                operando_actual = resultado.ToString();
-                OperandoLabel.Text = operando_actual;
-            }
-            else
-            {
-                OperandoLabel.Text = operando_actual.Length > 0 ? operando_actual : "0";
-            }
-            
-            operador = null;
+            if(operador != null) Operacion();
         }
 
         void Operar(System.Object sender, System.EventArgs e)
         {
-            if (operador == null)
-            {
-                
-                operando_anterior = operando_actual.Length > 0 ? float.Parse(operando_actual) : 0;
-            }
-            else
-            {
-                operando_anterior = Calcular(operando_anterior, operando_actual.Length > 0 ? float.Parse(operando_actual) : 0, operador);
-            }
-
-            operando_actual = "";
             operador = ((Button)sender).Text;
-            OperandoLabel.Text = operando_anterior.ToString();
+
+            if (ultimo_estado != "O")
+            {
+                ultimo_estado = "O";
+
+                if (OperandoLabel.Text != "0")
+                {
+                    if (operando1 != null)
+                    {
+                        Operacion();
+                    }
+                    else
+                    {
+                        operando1 = OperandoLabel.Text;
+                    }
+                }
+            }
         }
 
-        float Calcular(float a, float b, string operador)
+        decimal Calcular(decimal a, string operador, decimal b)
         {
-            float resultado = 0;
+            decimal resultado = 0;
 
             switch (operador)
             {
@@ -137,7 +123,7 @@ namespace krang
                     resultado = a / b;
                     break;
             }
-
+            
             return resultado;
         }
     }

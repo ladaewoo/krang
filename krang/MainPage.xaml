@@ -6,7 +6,7 @@
         <Frame BackgroundColor="Red" Padding="24" CornerRadius="0">
             <Label Text="Calculadora Básica" HorizontalTextAlignment="Center" TextColor="White" FontSize="40"/>
         </Frame>
-       <Grid Margin="20" Background="White" Padding="10">
+       <Grid Style="{StaticResource main_grid}">
             <Label Text="0" x:Name="OperandoLabel" TextColor="LightSlateGray"
                    VerticalOptions="End"
                    HorizontalOptions="End"
@@ -104,7 +104,6 @@
                     CornerRadius="10"
                     Clicked="AgregarPunto"
                     Text="⬝" />
-            
             <Button Grid.Row="5"
                     Grid.Column="2"
                     Grid.ColumnSpan="2"

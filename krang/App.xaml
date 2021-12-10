@@ -18,5 +18,10 @@
             <Setter Property="FontSize" Value="40" />
             <Setter Property="BackgroundColor" Value="Red" />
         </Style>
+        <Style TargetType="Grid" x:Key="main_grid">
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
     </Application.Resources>
 </Application>
