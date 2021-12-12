@@ -74,7 +74,7 @@ namespace krang
             decimal resultado = Calcular(Convert.ToDecimal(operando1), operador, operando2);
             OperandoLabel.Text = resultado.ToString();
             operando1 = null;
-            operador = null;
+            // operador = null;
         }
 
         void ObtenerResultado(System.Object sender, System.EventArgs e)
